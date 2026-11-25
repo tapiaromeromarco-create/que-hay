@@ -1751,6 +1751,7 @@ function cocinar(i, k) {
 
 // ---------- Arma tu casa (primera vez) ----------
 function bienvenida(editar) {
+  if (!editar) { S = inicial({ nombre:'Casa Roomies', yo:'Tú', roomies:['Dani','Sofi','Leo'] }); L.soy = 'Tú'; guardarL(); guardar(); $('#capa').innerHTML = ''; ir('casa'); return; }
   const c = editar ? S.casa : {nombre:'Casa Roma', yo:'', roomies:['Dani','Sofi','Leo']};
   const r = [...c.roomies, '', '', ''].slice(0, 3);
   $('#capa').innerHTML = `<div class="bienvenida ${editar ? 'editando' : ''}" role="dialog" aria-label="Arma tu casa">
