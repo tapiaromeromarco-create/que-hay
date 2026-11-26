@@ -773,7 +773,7 @@ function inicial(casa) {
     v:3, casa, votos: b ? {'Chilaquiles rojos': {[b]: 1}} : {}, stats: {}, enCasa: b ? {[b]: ahora() - 2*H} : {}, ahorro: {cosas:0, pesos:0},
     items: [
       ['jitomate','Jitomate','1 kg','verdura',5],['cebolla','Cebolla','3 pzas','verdura',3],['chile','Chile serrano','100 g','verdura',4],
-      ['queso','Queso Oaxaca','400 g','refri',6],['crema','Crema','1 pza','refri',8],['tortillas','Tortillas','1 kg','alacena',4],
+      ['queso','Queso regional','400 g','refri',6],['crema','Crema','1 pza','refri',8],['tortillas','Tortillas de harina','1 kg','alacena',4],
       ['arroz','Arroz','1 kg','alacena',20],['frijoles','Frijoles','1 bolsa','alacena',15],['pasta','Pasta','2 bolsas','alacena',30],
       ['huevo','Huevo','12 pzas','refri',0,false,null],['leche','Leche','1 L','refri',0,false,b || null],
     ].map(([id,n,q,c,d,hay=true,aparta=null]) => ({id,n,q,c,hay,aparta,ts:ahora()-d*DIA})),
@@ -1764,7 +1764,7 @@ function cocinar(i, k) {
 
 // ---------- Arma tu casa (primera vez) ----------
 function bienvenida(editar) {
-  if (!editar) { S = inicial({ nombre:'Casa Roomies', yo:'Tú', roomies:['Dani','Sofi','Leo'] }); L.soy = 'Tú'; guardarL(); guardar(); $('#capa').innerHTML = ''; ir('casa'); return; }
+  if (!editar) { S = inicial({ nombre:'Casa Hermosillo', yo:'Tú', roomies:['Chuy','Lupita','Beto'] }); L.soy = 'Tú'; guardarL(); guardar(); $('#capa').innerHTML = ''; ir('casa'); return; }
   const c = editar ? S.casa : {nombre:'Casa Roma', yo:'', roomies:['Dani','Sofi','Leo']};
   const r = [...c.roomies, '', '', ''].slice(0, 3);
   $('#capa').innerHTML = `<div class="bienvenida ${editar ? 'editando' : ''}" role="dialog" aria-label="Arma tu casa">
