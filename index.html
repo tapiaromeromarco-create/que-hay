@@ -1764,7 +1764,7 @@ function cocinar(i, k) {
 
 // ---------- Arma tu casa (primera vez) ----------
 function bienvenida(editar) {
-  if (!editar) { S = inicial({ nombre:'Casa Hermosillo', yo:'Tú', roomies:['Chuy','Lupita','Beto'] }); L.soy = 'Tú'; guardarL(); guardar(); $('#capa').innerHTML = ''; ir('casa'); return; }
+  if (!editar) { S = inicial({ nombre:'Casa Hermosillo', yo:'Tú', roomies:['Chuy','Lupita','Beto'] }); L.soy = 'Tú'; guardarL(); guardar(); $('#capa').innerHTML = ''; ir('casa'); setTimeout(chip, 500); return; }
   const c = editar ? S.casa : {nombre:'Casa Roma', yo:'', roomies:['Dani','Sofi','Leo']};
   const r = [...c.roomies, '', '', ''].slice(0, 3);
   $('#capa').innerHTML = `<div class="bienvenida ${editar ? 'editando' : ''}" role="dialog" aria-label="Arma tu casa">
@@ -1959,5 +1959,5 @@ iniciarIA();
   <button type="button">Entrar</button>
   <small>Demo del Kit Qué Hay</small>
 </div>
-<script>(function(){var h=document.getElementById('hola');function sal(){h.classList.add('fuera');setTimeout(function(){h.remove()},500)}h.addEventListener('click',sal)})();</script>
+<script>(function(){var h=document.getElementById('hola');if(/^#(puerta|super|refri|mesa)/.test(location.hash)){h.remove();return}function sal(){h.classList.add('fuera');setTimeout(function(){h.remove()},500)}h.addEventListener('click',sal)})();</script>
 </body></html>
